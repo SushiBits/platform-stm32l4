@@ -1,0 +1,9 @@
+MEMORY
+{
+    IROM	(r x) : ORIGIN = 0x08000000, LENGTH = 1024k
+    ITCM    (rwx) : ORIGIN = 0x10000000, LENGTH = 64k
+	STACK   (rwx) : ORIGIN = 0x20000000, LENGTH = 384k
+	IRAM    (rwx) : ORIGIN = 0x20040000, LENGTH = 192k
+}
+
+INCLUDE stm32l4.ld

@@ -1,0 +1,17 @@
+stm32l43xxb  128  48 16   0
+stm32l43xxc  256  48 16   0
+stm32l44xxc  256  48 16   0
+stm32l45xxc  256 128 32   0
+stm32l47xxc  256  96 32   0
+stm32l45xxe  512 128 32   0
+stm32l46xxe  512 128 32   0
+stm32l47xxe  512  96 32   0
+stm32l49xxe  512 256 64   0
+stm32l47xxg 1024  96 32   0
+stm32l48xxg 1024  96 32   0
+stm32l49xxg 1024 256 64   0
+stm32l4axxg 1024 256 64   0
+stm32l4axxg 1024 256 64   0
+stm32l4rxxg 1024 192 64 384
+stm32l4rxxi 2048 192 64 384
+stm32l4sxxi 2048 192 64 384
