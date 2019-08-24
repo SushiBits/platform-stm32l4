@@ -30,7 +30,7 @@ void *_sbrk(ptrdiff_t incr)
 	void *oldbrk = mem_end;
 	void *newbrk = oldbrk + incr;
 
-	if ((void *)newbrk >= (void *)MIN(&__heap_end ?: getsp()))
+	if ((void *)newbrk >= (void *)&__heap_end)
 	{
 		errno = ENOMEM;
 		return NULL;
