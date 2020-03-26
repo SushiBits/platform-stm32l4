@@ -21,7 +21,7 @@ SECTIONS
 		KEEP(*(.vector))
 		ASSERT(. != __vector_start, "The interrupt vector is missing.");
 		. = ALIGN(4);
-	} > ITCM AT > IROM
+	} > IRAM AT > IROM
 	
 	/* Now comes the bulk of the application code in Flash. */
 	.text :

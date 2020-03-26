@@ -65,6 +65,8 @@ __attribute__((noreturn)) void Reset_IRQHandler(void)
 
 	SCB->VTOR = (uint32_t)ISR_Vector;
 	SCB->SHCSR |= SCB_SHCSR_USGFAULTENA_Msk | SCB_SHCSR_BUSFAULTENA_Msk | SCB_SHCSR_MEMFAULTENA_Msk;
+	RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
+	SYSCFG->MEMRMP = 0b011;
 
 	_start();
 }
