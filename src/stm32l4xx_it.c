@@ -44,7 +44,6 @@ __attribute__((noreturn)) extern void _start(void);
 __attribute__((noreturn)) void Reset_IRQHandler(void)
 {
 	SCB->CPACR = 0b1111 << 20;
-	SCB->SHCSR |= SCB_SHCSR_USGFAULTENA_Msk | SCB_SHCSR_BUSFAULTENA_Msk | SCB_SHCSR_MEMFAULTENA_Msk;
 
 	SystemInit();
 
@@ -65,11 +64,12 @@ __attribute__((noreturn)) void Reset_IRQHandler(void)
 	SystemCoreClockUpdate();
 
 	SCB->VTOR = (uint32_t)ISR_Vector;
+	SCB->SHCSR |= SCB_SHCSR_USGFAULTENA_Msk | SCB_SHCSR_BUSFAULTENA_Msk | SCB_SHCSR_MEMFAULTENA_Msk;
 
 	_start();
 }
 
-__attribute__((noreturn)) void Default_IRQHandler(void)
+void Default_IRQHandler(void)
 {
 	if (CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk)
 		__BKPT(0);
